@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block titke %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <form method="POST" class="form-register" style="color:white">
+        {{ form.hidden_tag() }}
+        <br>
+        <img height="280px" width="280px" src="../static/login3.png">
+        <h1 class="h3 mb-3 font-weight-normal">
+            Please Login
+        </h1>
+        <div class="container">
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
+        
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder="Password")}}
+        
+            <br>
+            {{ form.submit(class="btn btn-block btn-lg btn-primary")}}
+
+            <br>
+            <div class="checkbox mb-3">
+                <h6>Do not have Account</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+
+            </div>
+        
+        </div>
+    </form>
+</body>
+{% endblock %}
